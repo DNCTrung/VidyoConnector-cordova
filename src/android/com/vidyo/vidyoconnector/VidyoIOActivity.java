@@ -432,6 +432,7 @@ public class VidyoIOActivity extends Activity implements Connector.IConnect, Con
         if (reason == Connector.ConnectorDisconnectReason.VIDYO_CONNECTORDISCONNECTREASON_Disconnected) {
             mLogger.Log("OnDisconnected: successfully disconnected, reason = " + reason.toString());
             ConnectorStateUpdated(VIDYO_CONNECTOR_STATE.VC_DISCONNECTED, "Disconnected");
+            onBackPressed();
         } else {
             mLogger.Log("OnDisconnected: unexpected disconnection, reason = " + reason.toString());
             ConnectorStateUpdated(VIDYO_CONNECTOR_STATE.VC_DISCONNECTED_UNEXPECTED, "Unexpected disconnection");
